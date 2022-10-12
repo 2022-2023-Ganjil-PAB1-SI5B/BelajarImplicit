@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="6dp"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/et_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="https://www.google.com"/>
+
+    <Button
+        android:id="@+id/btn_buka_website"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Buka Website"
+        android:layout_marginBottom="16dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/et_lokasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Jembatan Ampera"/>
+
+    <Button
+        android:id="@+id/btn_buka_lokasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buka Lokasi"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/et_teks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Teks Apa Saja"/>
+
+    <Button
+        android:id="@+id/btn_bagikan_teks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bagikan Teks"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>
