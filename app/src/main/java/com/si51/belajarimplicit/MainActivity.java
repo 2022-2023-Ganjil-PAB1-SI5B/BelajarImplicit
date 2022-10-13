@@ -1,6 +1,7 @@
 package com.si51.belajarimplicit;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ShareCompat;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -43,14 +44,25 @@ public class MainActivity extends AppCompatActivity {
         btnBukaLokasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String lokasi = etLokasi.getText().toString();
+                Uri konvLokasi = Uri.parse("geo:0,0?q="+lokasi);
+                Intent bukaLokasi = new Intent(Intent.ACTION_VIEW, konvLokasi);
+                startActivity(bukaLokasi);
             }
         });
 
         btnBagikanTeks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String teks = etTeks.getText().toString();
 
+                String mimeType = "text/plain";
+                new ShareCompat
+                        .IntentBuilder(MainActivity.this)
+                        .setType(mimeType)
+                        .setChooserTitle("Bagikan Teks Ini")
+                        .setText(teks)
+                        .startChooser();
             }
         });
 
