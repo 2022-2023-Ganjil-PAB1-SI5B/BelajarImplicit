@@ -2,6 +2,8 @@ package com.si51.belajarimplicit;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +29,14 @@ public class MainActivity extends AppCompatActivity {
         btnBukaWebsite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String urlWebsite = etUrl.getText().toString();
+                Uri konvUrlWebsite = Uri.parse(urlWebsite);
+                Intent bukaWebsite = new Intent(Intent.ACTION_VIEW, konvUrlWebsite);
+                try {
+                    startActivity(bukaWebsite);
+                } catch (Exception e){
+                    etUrl.setError("Ada Kesalahan URL Website");
+                }
             }
         });
 
@@ -41,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         btnBagikanTeks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
 
